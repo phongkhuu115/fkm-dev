@@ -1,5 +1,6 @@
 {
   "name": "myportfolio",
+  "homepage": "http://personal.fkmdev.site",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
