@@ -1,10 +1,10 @@
 import { TNestedKeyOfObject } from '@/types'
-import { images } from './image.registry'
+import { icons } from './icon.registry'
 
-export * from './image.registry'
+export * from './icon.registry'
 
 export type TRegistry = TNestedKeyOfObject<typeof registries>
 
 export const registries = {
-  images: images,
+  icons: icons,
 }
