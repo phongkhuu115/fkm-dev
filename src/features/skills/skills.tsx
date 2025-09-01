@@ -57,7 +57,7 @@ export const Skills = () => {
   }, [])
 
   return (
-    <section id="skills" className="pt-6 space-y-4">
+    <section id="skills" className="space-y-4">
       <SectionHeader title="skills" />
       <div className="flex items-center gap-4">
         {generals.map(renderGeneral)}

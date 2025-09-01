@@ -22,20 +22,22 @@ const svgrOptions = {
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   // Webpack fallback (used if not running with Turbopack)
-  webpack(config) {
-    const assetRule = config.module.rules.find(
-      (rule: any) => rule?.test?.test?.('.svg')
-    );
-    if (assetRule) {
-      assetRule.exclude = /\.svg$/i;
-    }
-
+  webpack(config, { dev: isDev, isServer }) {
     config.module.rules.push({
       test: /\.svg$/i,
       issuer: /\.[jt]sx?$/,
-      use: [
-        { loader: '@svgr/webpack', options: svgrOptions },
-      ],
+      resourceQuery: /svgr/, // only use svgr to load svg if path ends with *.svg?svgr
+      use: ["@svgr/webpack"],
+    });
+
+    // Re-add default nextjs loader for svg
+    config.module.rules.push({
+      test: /\.svg$/i,
+      loader: "next-image-loader",
+      issuer: { not: /\.(css|scss|sass)$/ },
+      dependency: { not: ["url"] },
+      resourceQuery: { not: [/svgr/] }, // Ignore this rule if the path ends with *.svg?svgr
+      options: { isServer, isDev, basePath: "", assetPrefix: "" },
     });
 
     return config;
