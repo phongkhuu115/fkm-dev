@@ -1,7 +1,9 @@
+"use client"
+
 import { SectionHeader } from "@/components/common"
 import { GeneralItem } from "./general-item"
 import { useCallback } from "react"
-import { Bot, Cloud, CodeXml, Database, MonitorCog, TestTube } from "lucide-react"
+import { BookA, Bot, Cloud, CodeXml, Database, icons, MonitorCog, TestTube } from "lucide-react"
 import { SkillItem } from "./skill-item"
 
 const generals = ['Javascript', 'Typescript', 'Python', 'Mobile App Development', 'Web Development', 'Desktop App Development']
@@ -10,7 +12,8 @@ const skillSets = [
   {
     title: "Front End",
     icon: CodeXml,
-    skills: ['ReactJS', 'React Native', 'NextJS']
+    skills: ['ReactJS', 'React Native', 'NextJS'],
+    main: true
   },
   {
     title: "Back End",
@@ -36,16 +39,21 @@ const skillSets = [
     title: "Testing",
     icon: TestTube,
     skills: ['Mocha']
+  },
+  {
+    title: "Others",
+    icon: BookA,
+    skills: ['Monorepo', 'Lerna', 'Turbo']
   }
 ]
 
 export const Skills = () => {
-  const renderGeneral = useCallback((language: string) => {
-    return <GeneralItem key={language} language={language} />
+  const renderGeneral = useCallback((language: string, index: number) => {
+    return <GeneralItem key={language} language={language} index={index} />
   }, [])
 
-  const renderSkillSet = useCallback((skillSet: typeof skillSets[0]) => {
-    return <SkillItem key={skillSet.title} item={skillSet} icon={skillSet.icon} />
+  const renderSkillSet = useCallback((skillSet: typeof skillSets[0], index: number) => {
+    return <SkillItem key={skillSet.title} item={skillSet} icon={skillSet.icon} index={index} />
   }, [])
 
   return (

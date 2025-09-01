@@ -1,3 +1,4 @@
+import { ScrollDownIndicator } from "../scroll-down-indicator"
 import { IntroductionImage } from "./introduction-image"
 import { IntroductionParagraphs } from "./introduction-paragraphs"
 
