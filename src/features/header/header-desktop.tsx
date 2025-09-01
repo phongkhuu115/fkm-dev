@@ -42,12 +42,14 @@ export const HeaderDesktop = () => {
       <Link key={href.path} href={{
         pathname: href.path
       }} className="">
-        <span className="text-primary">#</span>
-        <span className={cn("text-primary", {
-          "text-white": isActive(href)
-        })}>
-          {href.title}
-        </span>
+        <code className="bg-gray/20 py-[2px] px-1 rounded-md">
+          <span className="text-primary">@</span>
+          <span className={cn("text-primary hover:text-white transition-colors duration-300", {
+            "text-white": isActive(href)
+          })}>
+            {href.title}
+          </span>
+        </code>
       </Link>
     )
   }, [path, isActive])
