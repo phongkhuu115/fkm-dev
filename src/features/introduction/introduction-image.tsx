@@ -1,6 +1,5 @@
 import { SVG } from "@/components/ui/svg"
 import Personal from '@/assets/images/developer.svg'
-import Image from "next/image"
 
 export const IntroductionImage = () => {
   return (
