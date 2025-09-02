@@ -1,8 +1,16 @@
+"use client"
+
 import { Button } from "@/components"
 import { ShowOnEnterView } from "@/components/common"
 import { Download } from "lucide-react"
 
+const RESUME_URL = "https://drive.google.com/file/d/1PNckUQ9W6xDRsOEzobaMaynmKvVfDK1q/view?usp=sharing"
+
 export const IntroductionParagraphs = () => {
+  const handleDownloadResume = () => {
+    window.open(RESUME_URL, "_blank")
+  }
+
   return (
     <ShowOnEnterView>
       <div className="space-y-6 text-white flex-1">
@@ -16,7 +24,7 @@ export const IntroductionParagraphs = () => {
           <Button type="button">
             Contact me!!
           </Button>
-          <Button variant="outline" className="flex gap-2">
+          <Button variant="outline" className="flex gap-2" onClick={handleDownloadResume}>
             Download Resume <Download />
           </Button>
         </div>
