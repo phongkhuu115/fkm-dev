@@ -24,10 +24,6 @@ const hrefs: IHref[] = [
     path: "/about-me",
     title: "about-me"
   },
-  {
-    path: "/contacts",
-    title: "contacts"
-  },
 ]
 
 export const HeaderDesktop = () => {

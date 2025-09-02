@@ -1,4 +1,4 @@
-import { ContactSection } from "@/features/contact-section";
+import { ContactSection, FloatingContactMethods } from "@/features/contact-section";
 import { Experiences } from "@/features/experiences";
 import { Introduction } from "@/features/introduction";
 import { Quote } from "@/features/quote";
@@ -14,6 +14,7 @@ export default function Home() {
       <Skills />
       <Experiences />
       <ContactSection />
+      <FloatingContactMethods />
     </div>
   );
 }
