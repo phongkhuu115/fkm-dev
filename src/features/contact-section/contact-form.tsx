@@ -15,7 +15,7 @@ import {
 } from '@/components/ui';
 import { useState } from 'react';
 import { SendIcon } from 'lucide-react';
-import { motion } from 'motion/react';
+import emailjs from '@emailjs/browser';
 
 type ContactFormData = {
   name: string;
@@ -45,10 +45,14 @@ export function ContactForm() {
     setSubmitStatus('idle');
 
     try {
-      // Simulate API call - replace with your actual endpoint
-      await new Promise(resolve => setTimeout(resolve, 1000));
-
-      console.log('Form submitted:', data);
+      await emailjs.send(
+        process.env.NEXT_PUBLIC_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_TEMPLATE_ID!,
+        {
+          ...data
+        },
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+      );
       setSubmitStatus('success');
       form.reset();
     } catch (error) {
