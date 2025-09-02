@@ -62,7 +62,7 @@ export const Skills = () => {
       <div className="flex flex-wrap items-center gap-4">
         {generals.map(renderGeneral)}
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {skillSets.map(renderSkillSet)}
       </div>
     </section>
