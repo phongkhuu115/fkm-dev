@@ -73,53 +73,54 @@ export const Experiences = () => {
     );
   };
 
-  const renderExperience = (experience: TExperiences) => {
+  const renderExperience = (experience: TExperiences, index: number) => {
     return (
-      <AccordionItem
-        value={experience.company}
-        key={experience.company}
-        className='border border-primary rounded-md'>
-        <AccordionTrigger className='px-4 hover:no-underline cursor-pointer relative'>
-          <div className='absolute -top-3 left-2 bg-background px-2'>
-            <Folder />
-          </div>
-          <span>
-            <span className='text-success'>$ cd </span>/{experience.company}
-            <div>
-              <span className='text-success'>$ cd </span>/responsibilities
+      <motion.div key={experience.company} initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: 0.2 * (index + 1), duration: 0.5 }}>
+        <AccordionItem
+          value={experience.company}
+          className='border border-primary rounded-md'>
+          <AccordionTrigger className='px-4 hover:no-underline cursor-pointer relative'>
+            <div className='absolute -top-3 left-2 bg-background px-2'>
+              <Folder />
             </div>
-            <div>
-              <span className='text-success'>$ ls{renderBlinkingCaret()}</span>
-            </div>
-          </span>
-        </AccordionTrigger>
-        <AccordionContent className='border-t-2 border-primary pb-0'>
-          <div className='flex'>
-            {/* company info */}
-            <div className='flex gap-2 flex-4 border-r-2 border-primary p-4'>
-              <div className='w-16 h-16 rounded-xl overflow-hidden border'>
-                <Image
-                  src={experience.icon}
-                  alt={experience.company}
-                  className='w-full h-full object-center object-cover'
-                />
+            <span>
+              <span className='text-success'>$ cd </span>/{experience.company}
+              <div>
+                <span className='text-success'>$ cd </span>/responsibilities
               </div>
               <div>
-                <div className='text-white font-bold text-lg'>
-                  {experience.company.replace('_', ' ')}
+                <span className='text-success'>$ ls{renderBlinkingCaret()}</span>
+              </div>
+            </span>
+          </AccordionTrigger>
+          <AccordionContent className='border-t-2 border-primary pb-0'>
+            <div className='flex'>
+              {/* company info */}
+              <div className='flex gap-2 flex-4 border-r-2 border-primary p-4'>
+                <div className='w-16 h-16 rounded-xl overflow-hidden border'>
+                  <Image
+                    src={experience.icon}
+                    alt={experience.company}
+                    className='w-full h-full object-center object-cover'
+                  />
                 </div>
                 <div>
-                  {experience.position} - {experience.level}
+                  <div className='text-white font-bold text-lg'>
+                    {experience.company.replace('_', ' ')}
+                  </div>
+                  <div>
+                    {experience.position} - {experience.level}
+                  </div>
                 </div>
               </div>
+              {/* experiences */}
+              <div className='flex-6'>
+                {experience.description()}
+              </div>
             </div>
-            {/* experiences */}
-            <div className='flex-6'>
-              {experience.description()}
-            </div>
-          </div>
-        </AccordionContent>
-      </AccordionItem>
+          </AccordionContent>
+        </AccordionItem>
+      </motion.div>
     );
   };
 
@@ -129,8 +130,7 @@ export const Experiences = () => {
       <div className='mt-4'>
         <Accordion
           type='multiple'
-          className='w-full space-y-4'
-          defaultValue={experiences.map(experience => experience.company)}>
+          className='w-full space-y-6'>
           {experiences.map(renderExperience)}
         </Accordion>
       </div>
