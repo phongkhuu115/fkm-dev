@@ -45,14 +45,17 @@ export function ContactForm() {
     setSubmitStatus('idle');
 
     try {
-      await emailjs.send(
-        process.env.NEXT_PUBLIC_SERVICE_ID!,
-        process.env.NEXT_PUBLIC_TEMPLATE_ID!,
-        {
-          ...data
-        },
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
-      );
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      if (!res.ok) {
+        setSubmitStatus('error');
+        return;
+      }
+
       setSubmitStatus('success');
       form.reset();
     } catch (error) {
