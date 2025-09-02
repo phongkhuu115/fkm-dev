@@ -130,7 +130,9 @@ export const Experiences = () => {
       <div className='mt-4'>
         <Accordion
           type='multiple'
-          className='w-full space-y-6'>
+          className='w-full space-y-6'
+          defaultValue={experiences.map(experience => experience.company)}
+        >
           {experiences.map(renderExperience)}
         </Accordion>
       </div>
