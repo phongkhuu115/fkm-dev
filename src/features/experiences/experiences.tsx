@@ -126,7 +126,7 @@ export const Experiences = () => {
 
   return (
     <section id='experiences'>
-      <SectionHeader title='experiences' />
+      <SectionHeader title='experiences' href='/works' hrefTitle='View projects' />
       <div className='mt-4'>
         <Accordion
           type='multiple'

@@ -176,6 +176,10 @@ body {
     @apply bg-background text-foreground;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   .wave-hand {
     animation: wave 1.5s ease-in-out infinite;
     display: inline-block;
