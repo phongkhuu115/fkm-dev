@@ -59,10 +59,10 @@ export const Skills = () => {
   return (
     <section id="skills" className="space-y-4">
       <SectionHeader title="skills" />
-      <div className="flex items-center gap-4">
+      <div className="flex flex-wrap items-center gap-4">
         {generals.map(renderGeneral)}
       </div>
-      <div className="grid grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
         {skillSets.map(renderSkillSet)}
       </div>
     </section>

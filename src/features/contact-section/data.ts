@@ -1,6 +1,16 @@
-import { Facebook, Github, Linkedin, Mail } from "lucide-react";
+import { Facebook, Github, Linkedin, LucideProps, Mail } from "lucide-react";
+import { ForwardRefExoticComponent, RefAttributes } from "react";
 
-export const contactMethods = [
+export interface IContactMethod {
+  platform: string;
+  icon: ForwardRefExoticComponent<
+    Omit<LucideProps, 'ref'> & RefAttributes<SVGSVGElement>
+  >;
+  value: string;
+  href: string;
+}
+
+export const contactMethods: IContactMethod[] = [
   {
     platform: "Email",
     icon: Mail,

@@ -4,7 +4,7 @@ import { IntroductionParagraphs } from "./introduction-paragraphs"
 
 export const Introduction = () => {
   return (
-    <section className="flex py-6 justify-between gap-6 items-center">
+    <section className="flex flex-col md:flex-row py-6 justify-between gap-6 items-center">
       <IntroductionParagraphs />
       <IntroductionImage />
     </section>

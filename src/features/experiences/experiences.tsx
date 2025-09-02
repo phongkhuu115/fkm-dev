@@ -94,7 +94,7 @@ export const Experiences = () => {
             </span>
           </AccordionTrigger>
           <AccordionContent className='border-t-2 border-primary pb-0'>
-            <div className='flex'>
+            <div className='flex flex-col sm:flex-row'>
               {/* company info */}
               <div className='flex gap-2 flex-4 border-r-2 border-primary p-4'>
                 <div className='w-16 h-16 rounded-xl overflow-hidden border'>

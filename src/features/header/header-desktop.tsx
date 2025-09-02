@@ -2,56 +2,18 @@
 
 import Link from "next/link"
 import { Container } from "../layout"
-import { cn } from "@/lib"
-import { useCallback } from "react"
-import { usePathname } from "next/navigation";
-
-export interface IHref {
-  path: string,
-  title: string
-}
-
-const hrefs: IHref[] = [
-  {
-    path: "/",
-    title: "home"
-  },
-  {
-    path: "/works",
-    title: "works"
-  },
-  {
-    path: "/about-me",
-    title: "about-me"
-  },
-]
+import { hrefs, IHref } from "./data"
+import { Href } from "./href"
 
 export const HeaderDesktop = () => {
-  const path = usePathname()
-
-  const isActive = useCallback((href: IHref) => {
-    return path === href.path
-  }, [path])
-
-  const renderHref = useCallback((href: IHref) => {
+  const renderHref = (href: IHref) => {
     return (
-      <Link key={href.path} href={{
-        pathname: href.path
-      }} className="">
-        <code className="bg-gray/20 py-[2px] px-1 rounded-md">
-          <span className="text-primary">@</span>
-          <span className={cn("text-primary hover:text-white transition-colors duration-300", {
-            "text-white": isActive(href)
-          })}>
-            {href.title}
-          </span>
-        </code>
-      </Link>
+      <Href href={href} />
     )
-  }, [path, isActive])
+  }
 
   return (
-    <header className="pt-8">
+    <header className="pt-8 hidden sm:block">
       <Container>
         <div className="flex justify-between items-center">
           <div>

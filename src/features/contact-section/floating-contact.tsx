@@ -41,7 +41,7 @@ export const FloatingContactMethods = () => {
     );
   };
   return (
-    <div className='fixed top-0 left-4 space-y-2'>
+    <div className='fixed top-0 left-4 space-y-2 hidden sm:block'>
       <div className='flex justify-center'>
         <motion.div initial={{ height: 0 }} animate={{ height: 250 }} transition={{ duration: 0.5 }} className=' w-[1px] bg-primary'></motion.div>
       </div>

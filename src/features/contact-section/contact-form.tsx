@@ -144,7 +144,7 @@ export function ContactForm() {
           <Button
             type='submit'
             disabled={isSubmitting}
-            className='text-base font-medium group'>
+            className='text-base font-medium group sm:w-fit w-full'>
             {isSubmitting ? (
               <>
                 <div className='animate-spin rounded-full h-4 w-4 border-2 border-current border-t-transparent' />

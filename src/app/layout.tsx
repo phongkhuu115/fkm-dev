@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { HeaderDesktop } from "@/features";
+import { HeaderDesktop, HeaderMobile } from "@/features";
 
 export const metadata: Metadata = {
   title: "FKM | Fullstack Developer",
@@ -18,7 +18,8 @@ export default function RootLayout({
         className={`font-primary`}
       >
         <HeaderDesktop />
-        <main className="container mx-auto">
+        <HeaderMobile />
+        <main className="container mx-auto px-4 sm:px-0">
           {children}
         </main>
       </body>
