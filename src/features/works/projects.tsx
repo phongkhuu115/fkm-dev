@@ -57,9 +57,11 @@ const projects = [
     ),
     briefRole: () => (
       <Description>
-        <DescriptionItem>Participate in developing features like booking appointment.</DescriptionItem>
+        <DescriptionItem>Participate in developing features like booking appointment, doctor management,....</DescriptionItem>
         <DescriptionItem>Designing i18n content support Back End</DescriptionItem>
-        <DescriptionItem>Build a i18n CMS for the website</DescriptionItem>
+        <DescriptionItem>Build an i18n CMS for the website</DescriptionItem>
+        <DescriptionItem>Build a CRM for the website</DescriptionItem>
+        <DescriptionItem>Deploy and debug the web applications system</DescriptionItem>
       </Description>
     ),
     link: "https://bvquoctehue.com/"
