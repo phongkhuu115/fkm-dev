@@ -1,22 +1,30 @@
+'use client'
+
 import Link from "next/link"
 import { Container } from "../layout"
 import { Menu } from "lucide-react"
 import {
   Sheet,
   SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet"
 import { hrefs, IHref } from "./data"
 import { Href } from "./href"
 import { contactMethods, IContactMethod } from "../contact-section/data"
+import { useState } from "react"
 
 export const HeaderMobile = () => {
+  const [open, setOpen] = useState(false)
+
+  const handleOpenChange = (open: boolean) => {
+    setOpen(open)
+  }
+
   const renderHref = (href: IHref) => {
     return (
-      <Href href={href} />
+      <div onClick={() => setOpen(false)}>
+        <Href href={href} />
+      </div>
     )
   }
 
@@ -41,8 +49,8 @@ export const HeaderMobile = () => {
               Phong Khuu Minh <span className="text-secondary">(FKM)</span>
             </Link>
           </div>
-          <Sheet>
-            <SheetTrigger>
+          <Sheet open={open} onOpenChange={handleOpenChange}>
+            <SheetTrigger onClick={() => setOpen(true)}>
               <Menu className="text-primary" />
             </SheetTrigger>
             <SheetContent className="w-screen flex flex-col justify-between px-8 py-16">

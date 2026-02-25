@@ -8,12 +8,12 @@ import { useCallback } from "react"
 
 const projects = [
   {
-    name: 'Vhandicap',
-    thumbnail: "https://scontent.fsgn5-10.fna.fbcdn.net/v/t39.30808-6/531926084_644588612006847_184957156279709517_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_ohc=rOQh4biveTgQ7kNvwEwSoOK&_nc_oc=AdnMeMbZfVlVisMXogH2xOGA97VRm_-ehv4kb3y0FnrHFy8hZxBXFOh1L1ue5mpsJoY&_nc_zt=23&_nc_ht=scontent.fsgn5-10.fna&_nc_gid=pZZHjmPZZUS53_VxWYtOYw&oh=00_AfXsyaiGfgp-J6ginf-S-_67FyvastGNFjVFK1bLwVG4nA&oe=68BC7E74",
+    name: 'vHandicap',
+    thumbnail: "https://golfnews.vn/images/post/rrJk4v113rCckcmR_720.png",
     technologies: "React Native, ReactJS, Firebase, ExpressJS, NestJS, Firebase, Docker",
     generalDescription: () => (
       <Description>
-        <DescriptionItem>VHandicap is the only app in Vietnam, owned by VGA and developed by VGS Holding, that applies USGA Handicap rules and is officially recognized by the USGA.</DescriptionItem>
+        <DescriptionItem>vHandicap is the only app in Vietnam, owned by VGA and developed by VGS Holding, that applies USGA Handicap rules and is officially recognized by the USGA.</DescriptionItem>
         <DescriptionItem>The app currently holds data for over 100,000 Vietnamese golfers, and the number is expected to keep growing.</DescriptionItem>
       </Description>
     ),
@@ -48,7 +48,7 @@ const projects = [
   },
   {
     name: 'Hue International Hospital',
-    thumbnail: "https://bvquoctehue.com/assets/open-graph-main-vi.png",
+    thumbnail: "https://bvquoctehue.com/opengraph-image.png",
     technologies: "ReactJS, NextJS, Vite, NestJS, Minio, Docker",
     generalDescription: () => (
       <Description>
